@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 #include "chatgui.h"
 
 // forward declarations
@@ -17,16 +18,15 @@ private:
     ////
 
     // data handles (owned)
-    std::vector<GraphNode *> _nodes;
-    std::vector<GraphEdge *> _edges;
+    std::vector<std::unique_ptr<GraphNode>> _nodes;
 
     ////
     //// EOF STUDENT CODE
 
     // data handles (not owned)
-    GraphNode *_currentNode;
-    ChatBot *_chatBot;
-    ChatBotPanelDialog *_panelDialog;
+    GraphNode *_currentNode = nullptr;
+    ChatBot *_chatBot = nullptr;
+    ChatBotPanelDialog *_panelDialog = nullptr;
 
     // proprietary type definitions
     typedef std::vector<std::pair<std::string, std::string>> tokenlist;

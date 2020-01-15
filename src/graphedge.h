@@ -10,8 +10,8 @@ class GraphEdge
 {
 private:
     // data handles (not owned)
-    GraphNode *_childNode;
-    GraphNode *_parentNode;
+    GraphNode *_childNode = nullptr;
+    GraphNode *_parentNode = nullptr;
 
     // proprietary members
     int _id;
